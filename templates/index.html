@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="CampusAI — Intelligent AI-powered learning companion for university students."
+>
+
+<title>CampusAI — Intelligent Learning Companion</title>
+
+<!-- =====================================================
+     GOOGLE FONT
+     ===================================================== -->
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+<!-- =====================================================
+     MAIN CSS
+     ===================================================== -->
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}"
+>
+```
+
+</head>
+
+<body>
+
+<div class="app-shell">
+
+```
+<!-- =====================================================
+     MOBILE OVERLAY
+     ===================================================== -->
+
+<div
+    id="sidebarOverlay"
+    class="sidebar-overlay"
+></div>
+
+
+<!-- =====================================================
+     SIDEBAR
+     ===================================================== -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+    <!-- BRAND -->
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🎓
+        </div>
+
+        <div class="brand-text">
+
+            <h2>CampusAI</h2>
+
+            <span>
+                Smart Learning
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="navigation">
+
+        <button
+            type="button"
+            class="nav-item active"
+            data-page="dashboard"
+        >
+            <span class="nav-icon">
+                🏠
+            </span>
+
+            <span>
+                Dashboard
+            </span>
+        </button>
+
+
+        <button
+            type="button"
+            class="nav-item"
+            data-page="planner"
+        >
+            <span class="nav-icon">
+                📅
+            </span>
+
+            <span>
+                AI Study Planner
+            </span>
+        </button>
+
+
+        <button
+            type="button"
+            class="nav-item"
+            data-page="tutor"
+        >
+            <span class="nav-icon">
+                👨‍🏫
+            </span>
+
+            <span>
+                AI Tutor
+            </span>
+        </button>
+
+
+        <button
+            type="button"
+            class="nav-item"
+            data-page="quiz"
+        >
+            <span class="nav-icon">
+                📝
+            </span>
+
+            <span>
+                Smart Quiz
+            </span>
+        </button>
+
+    </nav>
+
+
+    <!-- SIDEBAR BOTTOM -->
+
+    <div class="sidebar-bottom">
+
+        <div class="powered-card">
+
+            <div class="powered-icon">
+                🤖
+            </div>
+
+            <div>
+
+                <strong>
+                    Powered by AI
+                </strong>
+
+                <small>
+                    Gemma + LangChain
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="themeToggle"
+            class="theme-button"
+        >
+
+            <span class="theme-icon">
+                🌙
+            </span>
+
+            <span class="theme-text">
+                Dark Mode
+            </span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+     ===================================================== -->
+
+<main class="main-content">
+
+
+    <!-- =================================================
+         TOPBAR
+         ================================================= -->
+
+    <header class="topbar">
+
+        <div class="topbar-left">
+
+            <button
+                type="button"
+                id="mobileMenuButton"
+                class="mobile-menu-button"
+                aria-label="Open navigation"
+            >
+                ☰
+            </button>
+
+            <div>
+
+                <span class="eyebrow">
+                    AI-POWERED ACADEMIC ASSISTANT
+                </span>
+
+                <h1 id="pageTitle">
+                    Learn smarter. Plan better.
+                </h1>
+
+            </div>
+
+        </div>
+
+
+        <div class="status-badge">
+
+            <span class="status-dot"></span>
+
+            <span>
+                AI Ready
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         PAGE CONTAINER
+         ================================================= -->
+
+    <div class="page-container">
+
+
+        <!-- =================================================
+             DASHBOARD
+             ================================================= -->
+
+        <section
+            id="dashboard"
+            class="page active"
+        >
+
+            <!-- HERO -->
+
+            <div class="hero">
+
+                <div class="hero-content">
+
+                    <span class="hero-label">
+                        🎓 YOUR INTELLIGENT LEARNING COMPANION
+                    </span>
+
+
+                    <h2>
+                        Study with
+                        <span>AI</span>,
+                        grow with confidence.
+                    </h2>
+
+
+                    <p>
+                        Plan your studies, understand difficult
+                        concepts, practice with smart quizzes,
+                        and listen to AI-generated lessons.
+                    </p>
+
+
+                    <!-- TECHNOLOGY -->
+
+                    <div class="tech-badges">
+
+                        <span class="tech-badge">
+                            🤖 Gemma
+                        </span>
+
+                        <span class="tech-badge">
+                            🔗 LangChain
+                        </span>
+
+                        <span class="tech-badge">
+                            🎙️ ElevenLabs
+                        </span>
+
+                        <span class="tech-badge">
+                            ⚡ Flask
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        data-page="planner"
+                    >
+
+                        <span>
+                            Create My Study Plan
+                        </span>
+
+                        <span class="button-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- HERO VISUAL -->
+
+                <div class="hero-visual">
+
+                    <div class="hero-glow glow-one"></div>
+
+                    <div class="hero-glow glow-two"></div>
+
+
+                    <div class="ai-orb">
+
+                        <div class="orb-ring ring-one"></div>
+
+                        <div class="orb-ring ring-two"></div>
+
+                        <span>
+                            AI
+                        </span>
+
+                    </div>
+
+
+                    <div class="floating-card floating-one">
+                        📚 Study
+                    </div>
+
+                    <div class="floating-card floating-two">
+                        🧠 Learn
+                    </div>
+
+                    <div class="floating-card floating-three">
+                        🎯 Practice
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FEATURES -->
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        EXPLORE
+                    </span>
+
+                    <h3>
+                        Everything you need to learn smarter
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+
+                <!-- STUDY PLANNER -->
+
+                <button
+                    type="button"
+                    class="feature-card"
+                    data-page="planner"
+                >
+
+                    <div class="feature-icon purple">
+                        📅
+                    </div>
+
+                    <h4>
+                        AI Study Planner
+                    </h4>
+
+                    <p>
+                        Build a realistic and personalized
+                        study routine around your time and goals.
+                    </p>
+
+                    <span class="feature-link">
+                        Plan now →
+                    </span>
+
+                </button>
+
+
+                <!-- AI TUTOR -->
+
+                <button
+                    type="button"
+                    class="feature-card"
+                    data-page="tutor"
+                >
+
+                    <div class="feature-icon blue">
+                        👨‍🏫
+                    </div>
+
+                    <h4>
+                        AI Tutor
+                    </h4>
+
+                    <p>
+                        Turn difficult topics into simple
+                        explanations, examples, and recaps.
+                    </p>
+
+                    <span class="feature-link">
+                        Ask tutor →
+                    </span>
+
+                </button>
+
+
+                <!-- SMART QUIZ -->
+
+                <button
+                    type="button"
+                    class="feature-card"
+                    data-page="quiz"
+                >
+
+                    <div class="feature-icon orange">
+                        📝
+                    </div>
+
+                    <h4>
+                        Smart Quiz
+                    </h4>
+
+                    <p>
+                        Generate interactive questions,
+                        test your knowledge, and review mistakes.
+                    </p>
+
+                    <span class="feature-link">
+                        Take a quiz →
+                    </span>
+
+                </button>
+
+
+                <!-- VOICE -->
+
+                <div class="feature-card static">
+
+                    <div class="feature-icon green">
+                        🎙️
+                    </div>
+
+                    <h4>
+                        Voice Learning
+                    </h4>
+
+                    <p>
+                        Listen to AI responses using
+                        ElevenLabs text-to-speech.
+                    </p>
+
+                    <span class="feature-link">
+                        Available everywhere
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- HOW IT WORKS -->
+
+            <div class="section-header workflow-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        HOW IT WORKS
+                    </span>
+
+                    <h3>
+                        Your learning workflow
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="workflow-grid">
+
+                <div class="workflow-card">
+
+                    <span class="workflow-number">
+                        01
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Plan
+                        </strong>
+
+                        <p>
+                            Organize your study time with AI.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="workflow-card">
+
+                    <span class="workflow-number">
+                        02
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Learn
+                        </strong>
+
+                        <p>
+                            Understand concepts with your AI tutor.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="workflow-card">
+
+                    <span class="workflow-number">
+                        03
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Practice
+                        </strong>
+
+                        <p>
+                            Test your knowledge with interactive quizzes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="workflow-card">
+
+                    <span class="workflow-number">
+                        04
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Improve
+                        </strong>
+
+                        <p>
+                            Review mistakes and strengthen weak areas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             STUDY PLANNER
+             ================================================= -->
+
+        <section
+            id="planner"
+            class="page"
+        >
+
+            <div class="tool-header">
+
+                <div class="tool-icon purple">
+                    📅
+                </div>
+
+                <div>
+
+                    <span class="eyebrow">
+                        PERSONALIZED PLANNING
+                    </span>
+
+                    <h2>
+                        AI Study Planner
+                    </h2>
+
+                    <p>
+                        Tell CampusAI what you need to study
+                        and let AI organize your time.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="tool-layout">
+
+
+                <!-- FORM -->
+
+                <form
+                    id="plannerForm"
+                    class="glass-form"
+                >
+
+                    <div class="form-heading">
+
+                        <span class="form-step">
+                            STEP 1
+                        </span>
+
+                        <h3>
+                            Tell us about your study goal
+                        </h3>
+
+                        <p>
+                            CampusAI will create a practical plan
+                            based on your available time.
+                        </p>
+
+                    </div>
+
+
+                    <label>
+
+                        Subject / Goal
+
+                        <input
+                            id="subject"
+                            type="text"
+                            placeholder="e.g. Machine Learning"
+                            autocomplete="off"
+                            required
+                        >
+
+                    </label>
+
+
+                    <div class="two-column">
+
+                        <label>
+
+                            Daily Study Hours
+
+                            <input
+                                id="hours"
+                                type="number"
+                                min="1"
+                                max="16"
+                                value="4"
+                                required
+                            >
+
+                        </label>
+
+
+                        <label>
+
+                            Available Days
+
+                            <input
+                                id="days"
+                                type="number"
+                                min="1"
+                                max="30"
+                                value="7"
+                                required
+                            >
+
+                        </label>
+
+                    </div>
+
+
+                    <label>
+
+                        Academic Level
+
+                        <select id="plannerLevel">
+
+                            <option value="University Beginner">
+                                University Beginner
+                            </option>
+
+                            <option value="University Intermediate">
+                                University Intermediate
+                            </option>
+
+                            <option value="University Advanced">
+                                University Advanced
+                            </option>
+
+                        </select>
+
+                    </label>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button full-width"
+                    >
+
+                        <span>
+                            ✨ Generate Study Plan
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+                <!-- RESULT -->
+
+                <div
+                    id="plannerResult"
+                    class="result-panel"
+                >
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            📅
+                        </div>
+
+                        <h3>
+                            Your study plan will appear here
+                        </h3>
+
+                        <p>
+                            Fill in the details and click
+                            Generate Study Plan.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             AI TUTOR
+             ================================================= -->
+
+        <section
+            id="tutor"
+            class="page"
+        >
+
+            <div class="tool-header">
+
+                <div class="tool-icon blue">
+                    👨‍🏫
+                </div>
+
+                <div>
+
+                    <span class="eyebrow">
+                        LEARN ANYTHING
+                    </span>
+
+                    <h2>
+                        AI Tutor
+                    </h2>
+
+                    <p>
+                        Ask CampusAI to explain any topic
+                        clearly and practically.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="tool-layout">
+
+
+                <!-- FORM -->
+
+                <form
+                    id="tutorForm"
+                    class="glass-form"
+                >
+
+                    <div class="form-heading">
+
+                        <span class="form-step">
+                            AI TUTOR
+                        </span>
+
+                        <h3>
+                            What would you like to learn?
+                        </h3>
+
+                        <p>
+                            Get a structured explanation with
+                            examples and a practice question.
+                        </p>
+
+                    </div>
+
+
+                    <label>
+
+                        What do you want to learn?
+
+                        <textarea
+                            id="topic"
+                            placeholder="e.g. Explain gradient descent with a simple example"
+                            required
+                        ></textarea>
+
+                    </label>
+
+
+                    <label>
+
+                        Student Level
+
+                        <select id="tutorLevel">
+
+                            <option value="Beginner">
+                                Beginner
+                            </option>
+
+                            <option value="Intermediate">
+                                Intermediate
+                            </option>
+
+                            <option value="Advanced">
+                                Advanced
+                            </option>
+
+                        </select>
+
+                    </label>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button full-width"
+                    >
+
+                        <span>
+                            🧠 Explain Topic
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+                <!-- RESULT -->
+
+                <div
+                    id="tutorResult"
+                    class="result-panel"
+                >
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            👨‍🏫
+                        </div>
+
+                        <h3>
+                            Your AI tutor is ready
+                        </h3>
+
+                        <p>
+                            Ask a question to get a clear,
+                            structured explanation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SMART QUIZ
+             ================================================= -->
+
+        <section
+            id="quiz"
+            class="page"
+        >
+
+            <div class="tool-header">
+
+                <div class="tool-icon orange">
+                    📝
+                </div>
+
+                <div>
+
+                    <span class="eyebrow">
+                        PRACTICE &amp; TEST
+                    </span>
+
+                    <h2>
+                        Smart Quiz
+                    </h2>
+
+                    <p>
+                        Challenge yourself with an AI-generated
+                        interactive quiz.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 QUIZ SETUP
+                 ================================================= -->
+
+            <div class="tool-layout">
+
+                <form
+                    id="quizForm"
+                    class="glass-form quiz-setup-form"
+                >
+
+                    <div class="form-heading">
+
+                        <span class="form-step">
+                            QUIZ SETUP
+                        </span>
+
+                        <h3>
+                            Configure your quiz
+                        </h3>
+
+                        <p>
+                            Choose a topic, difficulty, and
+                            number of questions.
+                        </p>
+
+                    </div>
+
+
+                    <label>
+
+                        Quiz Topic
+
+                        <input
+                            id="quizTopic"
+                            type="text"
+                            placeholder="e.g. Machine Learning"
+                            autocomplete="off"
+                            required
+                        >
+
+                    </label>
+
+
+                    <div class="two-column">
+
+                        <label>
+
+                            Difficulty
+
+                            <select id="difficulty">
+
+                                <option value="Easy">
+                                    Easy
+                                </option>
+
+                                <option
+                                    value="Medium"
+                                    selected
+                                >
+                                    Medium
+                                </option>
+
+                                <option value="Hard">
+                                    Hard
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+                        <label>
+
+                            Questions
+
+                            <select id="count">
+
+                                <option value="5">
+                                    5 Questions
+                                </option>
+
+                                <option value="10">
+                                    10 Questions
+                                </option>
+
+                                <option value="15">
+                                    15 Questions
+                                </option>
+
+                                <option value="20">
+                                    20 Questions
+                                </option>
+
+                            </select>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="quiz-rules">
+
+                        <div class="quiz-rule">
+
+                            <span>✓</span>
+
+                            <span>
+                                One correct answer per question
+                            </span>
+
+                        </div>
+
+
+                        <div class="quiz-rule">
+
+                            <span>✓</span>
+
+                            <span>
+                                Answers revealed after submission
+                            </span>
+
+                        </div>
+
+
+                        <div class="quiz-rule">
+
+                            <span>✓</span>
+
+                            <span>
+                                Detailed explanations included
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button full-width"
+                        id="startQuizButton"
+                    >
+
+                        <span>
+                            🚀 Start Quiz
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+                <!-- =================================================
+                     IMPORTANT RESULT CONTAINER
+                     ================================================= -->
+
+                <div
+                    id="quizResult"
+                    class="result-panel"
+                >
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            🧠
+                        </div>
+
+                        <h3>
+                            Ready to test yourself?
+                        </h3>
+
+                        <p>
+                            Generate an AI-powered quiz and
+                            challenge your understanding.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =================================================
+         FOOTER
+         ================================================= -->
+
+    <footer>
+
+        <div class="footer-brand">
+            CampusAI
+        </div>
+
+        <div class="footer-tech">
+
+            <span>Gemma</span>
+
+            <span>•</span>
+
+            <span>LangChain</span>
+
+            <span>•</span>
+
+            <span>ElevenLabs</span>
+
+            <span>•</span>
+
+            <span>Flask</span>
+
+        </div>
+
+        <p>
+            Built for smarter learning 🚀
+        </p>
+
+    </footer>
+
+</main>
+```
+
+</div>
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script
+    src="{{ url_for('static', filename='js/app.js') }}"
+></script>
+
+</body>
+
+</html>
